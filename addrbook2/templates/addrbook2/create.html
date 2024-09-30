@@ -1,0 +1,28 @@
+{% extends "addrbook2/search.html" %}
+
+{% block content %}
+    {% for error in form.non_field_errors %}
+        <p class="error">
+            {{ error }}
+        </p>
+    {% endfor %}
+
+    <form method="post" action="{% url 'create' %}">
+        <table>
+            {% for field in form.visible_fields %}
+                <tr>
+                    <td>{{field.label_tag}}</td>
+                    <td>{{field}}</td>
+                    <td class="error">
+                        {% for error in field.errors %} {{error}} {% endfor %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+        {% for field in form.hidden_fields %}
+            {{field}} {{field.errors}}
+        {% endfor %}
+        {% csrf_token %}
+        <button type="submit">Create</button>
+    </form>
+{% endblock %}

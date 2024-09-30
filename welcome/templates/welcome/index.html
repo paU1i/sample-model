@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Models Examples</title>
+    <link rel="stylesheet" href="/static/welcome/welcome.css">
+</head>
+
+<body>
+    <h1>Models Examples</h1>
+
+    <div>
+        This example includes three applications:
+
+        <ul>
+            <li>
+                <a href="/todolist2">todolist2</a> -- a version of the shared To Do List that stores its data in a database using a Django model.
+            </li>
+            <li>
+                <a href="/addrbook2">addrbook2</a> -- a version of the Address Book example that stores is data in the database, using a Django model, and uses ModelForms to reduce duplication of code.
+            </li>
+            <li>
+                <a>sample</a> -- a "sample" model, <strong>which you cannot run</strong>, but we will use to demonstrate accessing models from the python shell.
+            </li>
+        </ul>
+    </div>
+
+    <div class="note">
+        Note: You will be asked to register/login to use these examples.
+    </div>
+
+    <div class="note">
+        Note: These examples store data in the database.
+        The <kbd>settings.py</kbd> file is configured to store the data in SQLite.
+        The first time you run these examples will need to <kbd>makemigrations</kbd> and then <kbd>migrate</kbd> to set
+        up the database before <kbd>runserver</kbd>.  If you change the models, don't forget to <kbd>makemigrations</kbd>
+        and <kbd>migrate</kbd> again.
+    </div>
+</body>
+</html>
